@@ -14,7 +14,10 @@ function myFunction() {
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
   // ** seconds eğer ondan küçükse 0 stringiyle beraber second ı yazdır yok değilse sadece bana second ı yazdır.
-
-  myPar.innerHTML = `${minutes} : ${seconds}`;
-  saniye--;
+  if (minutes >= "00") {
+    myPar.innerHTML = `${minutes} : ${seconds}`;
+    saniye--;
+  } else {
+    myPar.innerHTML = `00:00`;
+  }
 }
